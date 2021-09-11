@@ -64,7 +64,7 @@ Height at the time of camera capture<br>
 Default：540
 * --mirror<br>
 Whether to display the image like a mirrorか<br>
-Default：指定なし
+Default：unspecified
 * --model<br>
 Use model<br>
 Default：'02.model/DeepLabV3Plus(timm-mobilenetv3_small_100)_452_2.16M_0.8385/best_model_simplifier.onnx'
