@@ -80,6 +80,6 @@ Default：0.5
 Kazuhito Takahashi(https://twitter.com/KzhtTkhs)
  
 # License 
-mediapipe-python-sample is under [Apache-2.0 License](LICENSE).
+Skin-Clothes-Hair-Segmentation-using-SMP is under [MIT License](LICENSE).
 
 The image of the woman image is taken from [Free Material Pakutaso](https://www.pakutaso.com).
