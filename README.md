@@ -80,6 +80,6 @@ python demo_onnx_image_overlay.py
 高橋かずひと(https://twitter.com/KzhtTkhs)
  
 # License 
-mediapipe-python-sample is under [Apache-2.0 License](LICENSE).
+mediapipe-python-sample is under [MIT License](LICENSE).
 
 また、女性の画像は[フリー素材ぱくたそ](https://www.pakutaso.com)様の写真を利用しています。
