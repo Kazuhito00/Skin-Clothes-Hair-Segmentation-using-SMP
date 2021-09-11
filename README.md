@@ -82,4 +82,4 @@ python demo_onnx_image_overlay.py
 # License 
 mediapipe-python-sample is under [Apache-2.0 License](LICENSE).
 
-また、女性の画像、および背景画像は[フリー素材ぱくたそ](https://www.pakutaso.com)様の写真を利用しています。
+また、女性の画像は[フリー素材ぱくたそ](https://www.pakutaso.com)様の写真を利用しています。
