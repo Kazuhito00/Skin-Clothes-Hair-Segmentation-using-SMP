@@ -1,3 +1,5 @@
+[Japanese/[English](https://github.com/Kazuhito00/Skin-Clothes-Hair-Segmentation-using-SMP/blob/main/README_EN.md)]
+
 # ⚠Attention⚠
 モデルを訓練するために使用したデータセットは自前で収集したものです。<br>
 背景や服の色、肌の色によって認識率が大きく下がる可能性があります。<br>
