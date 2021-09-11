@@ -1,3 +1,8 @@
+# ⚠Attention⚠
+モデルを訓練するために使用したデータセットは自前で収集したものです。<br>
+背景や服の色、肌の色によって認識率が大きく下がる可能性があります。<br>
+モデル使用に際し損害や問題が発生しても、作成者(高橋)は一切責任を負いません。
+
 # Skin-Clothes-Hair-Segmentation-using-SMP
 3クラス(肌、服、髪)のセマンティックセグメンテーションを実施するモデルです。<br>
 [Segmentation Models Pytorch](https://github.com/qubvel/segmentation_models.pytorch)を使用しています。<br>
@@ -7,11 +12,6 @@
 * DeepLabV3+<br>エンコーダー：timm-mobilenetv3_small_100<br>パラメータ数：約216万
 * PAN(Pyramid Attention Networ)<br>エンコーダー：timm-mobilenetv3_small_100<br>パラメータ数：約102万
 * U-Net++<br>エンコーダー：timm-mobilenetv3_small_100<br>パラメータ数：約371万
-
-# ⚠Attention⚠
-モデルを訓練するために使用したデータセットは自前で収集したものです。<br>
-背景や服の色、肌の色によって認識率が大きく下がる可能性があります。<br>
-モデル使用に際し損害や問題が発生しても、作成者(高橋)は一切責任を負いません。
 
 # Requirement 
 * torch 1.9.0 or later
