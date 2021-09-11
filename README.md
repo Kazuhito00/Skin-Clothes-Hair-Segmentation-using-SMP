@@ -27,6 +27,19 @@ demo_onnx_simple.py や demo_onnx_image_overlay.py のみを使用する場合�
 * opencv-python 3.4.2 or later
 * onnxruntime 1.8.1 or later
 
+# Dataset
+自前で撮影した画像やインターネット上から収集した画像を合計452枚使用しています。<bR>
+データセットは非公開です。<br><br>
+アノテーションは[GrabCut-Annotation-Tool](https://github.com/Kazuhito00/GrabCut-Annotation-Tool)を用いて実施しており、クラスの割り当ては以下の通りです。<br>
+* クラスID 1：肌
+* クラスID 2：服
+* クラスID 3：髪
+
+# Training
+Google Colaboratoryで [[Colaboratory]Skin_Clothes_Hair_Segmentation_using_SMP.ipynb]([Colaboratory]Skin_Clothes_Hair_Segmentation_using_SMP.ipynb) を開き、上から順に実行してください。<br>
+ノートブックが実行できるように、数枚のデータセットをコミットしてありますが、あくまで学習サンプルなので、<bR>
+本リポジトリで公開しているモデルの精度には及びません。
+
 # Demo
 デモの実行方法は以下です。
 ```bash
@@ -59,6 +72,7 @@ python demo_onnx_image_overlay.py
 
 # Reference
 * [Segmentation Models Pytorch](https://github.com/qubvel/segmentation_models.pytorch)
+* [GrabCut-Annotation-Tool](https://github.com/Kazuhito00/GrabCut-Annotation-Tool)
 
 # Author
 高橋かずひと(https://twitter.com/KzhtTkhs)
