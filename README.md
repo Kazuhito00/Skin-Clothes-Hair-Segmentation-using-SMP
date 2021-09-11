@@ -4,7 +4,7 @@
 <img src="https://user-images.githubusercontent.com/37477845/132933990-717324f1-2d74-4060-8b67-0bef06058ebe.gif" width="45%">　<img src="https://user-images.githubusercontent.com/37477845/132933998-eae87d48-a98f-43e1-a31c-983e1dea9c1d.gif" width="45%"><br>
 
 本リポジトリでは、以下3種類のモデルのpthファイルとonnxファイルを用意しています。
-* DeepLabV3Plus<br>エンコーダー：timm-mobilenetv3_small_100<br>パラメータ数：約216万
+* DeepLabV3+<br>エンコーダー：timm-mobilenetv3_small_100<br>パラメータ数：約216万
 * PAN(Pyramid Attention Networ)<br>エンコーダー：timm-mobilenetv3_small_100<br>パラメータ数：約102万
 * U-Net++<br>エンコーダー：timm-mobilenetv3_small_100<br>パラメータ数：約371万
 
