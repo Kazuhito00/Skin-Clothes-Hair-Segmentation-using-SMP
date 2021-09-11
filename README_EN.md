@@ -38,7 +38,7 @@ Annotation is performed using [GrabCut-Annotation-Tool](https://github.com/Kazuh
 * Class ID 3：Hair
 
 # Training
-Open [[Colaboratory]Skin_Clothes_Hair_Segmentation_using_SMP.ipynb]([Colaboratory] Skin_Clothes_Hair_Segmentation_using_SMP.ipynb) in Google Colaboratory and run from top to bottom.<br>
+Open [[Colaboratory]Skin_Clothes_Hair_Segmentation_using_SMP.ipynb]([Colaboratory]Skin_Clothes_Hair_Segmentation_using_SMP.ipynb) in Google Colaboratory and run from top to bottom.<br>
 I've committed a few datasets so that my notebook can run, but it's just a learning sample.<br>
 It does not reach the accuracy of the model published in this repository.
 
