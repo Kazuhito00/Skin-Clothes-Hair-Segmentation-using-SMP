@@ -12,7 +12,7 @@
 
 本リポジトリでは、以下3種類のモデルのpthファイルとonnxファイルを用意しています。
 * DeepLabV3+<br>エンコーダー：timm-mobilenetv3_small_100<br>パラメータ数：約216万
-* PAN(Pyramid Attention Networ)<br>エンコーダー：timm-mobilenetv3_small_100<br>パラメータ数：約102万
+* PAN(Pyramid Attention Network)<br>エンコーダー：timm-mobilenetv3_small_100<br>パラメータ数：約102万
 * U-Net++<br>エンコーダー：timm-mobilenetv3_small_100<br>パラメータ数：約371万
 
 # Requirement 
