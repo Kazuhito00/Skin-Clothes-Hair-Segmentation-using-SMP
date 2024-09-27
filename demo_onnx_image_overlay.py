@@ -151,6 +151,13 @@ def main():
     else:
         debug_image = copy.deepcopy(frame)
 
+        # ウォームアップ
+        _ = run_inference(
+            onnx_session,
+            input_size,
+            frame,
+        )
+
         start_time = time.time()
 
         # 検出実施 ##############################################################
