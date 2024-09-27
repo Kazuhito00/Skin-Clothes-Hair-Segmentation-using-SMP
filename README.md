@@ -9,7 +9,7 @@
 > イラストにも対応するようにしましたが、データセット数が不足しているため、精度はイマイチです。
 
 > [!NOTE]
-> このリポジトリは試験的なリポジトリです。人物のセグメンテーションを実施したい場合、[MediaPipe：SelfieMulticlass](https://github.com/Kazuhito00/mediapipe-python-sample?tab=readme-ov-file#%E7%94%BB%E5%83%8F%E3%82%BB%E3%82%B0%E3%83%A1%E3%83%B3%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3image-segmentation) をおすすめします。
+> このリポジトリは試験的なリポジトリです。<br>人物のセグメンテーションを実施したい場合、[MediaPipe：SelfieMulticlass](https://github.com/Kazuhito00/mediapipe-python-sample?tab=readme-ov-file#%E7%94%BB%E5%83%8F%E3%82%BB%E3%82%B0%E3%83%A1%E3%83%B3%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3image-segmentation) をおすすめします。
 
 # Skin-Clothes-Hair-Segmentation-using-SMP
 3クラス(肌、服、髪)のセマンティックセグメンテーションを実施するモデルです。<br>
