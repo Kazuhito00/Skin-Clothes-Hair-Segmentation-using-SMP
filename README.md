@@ -12,7 +12,7 @@
 3クラス(肌、服、髪)のセマンティックセグメンテーションを実施するモデルです。<br>
 [Segmentation Models Pytorch](https://github.com/qubvel/segmentation_models.pytorch)を使用しています。<br>
 <img src="https://user-images.githubusercontent.com/37477845/132933990-717324f1-2d74-4060-8b67-0bef06058ebe.gif" width="45%">　<img src="https://user-images.githubusercontent.com/37477845/132933998-eae87d48-a98f-43e1-a31c-983e1dea9c1d.gif" width="45%"><br>
-<img src="https://github.com/user-attachments/assets/c7cd1491-50cf-4eab-aeea-6b5ab061be56" width="45%">　
+<img src="https://github.com/user-attachments/assets/c7cd1491-50cf-4eab-aeea-6b5ab061be56" width="45%">　<img src="https://github.com/user-attachments/assets/4399e570-ad11-4d2c-8e81-46e17e055425" width="45%">　
 
 本リポジトリでは、以下3種類のモデルのpthファイルとonnxファイルを用意しています。
 * DeepLabV3+<br>エンコーダー：timm-mobilenetv3_small_100<br>パラメータ数：約216万
