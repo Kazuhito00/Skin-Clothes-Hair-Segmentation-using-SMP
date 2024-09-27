@@ -53,8 +53,11 @@ python demo_onnx_image_overlay.py
 * --device<br>
 カメラデバイス番号の指定<br>
 デフォルト：0
-* --file<br>
+* --video<br>
 動画ファイルの指定 ※動画指定時はカメラより優先<br>
+デフォルト：None
+* --image<br>
+画像ファイルの指定 ※画像指定時はカメラより優先<br>
 デフォルト：None
 * --width<br>
 カメラキャプチャ時の横幅<br>

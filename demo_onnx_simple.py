@@ -14,7 +14,8 @@ def get_args():
     parser = argparse.ArgumentParser()
 
     parser.add_argument("--device", type=int, default=0)
-    parser.add_argument("--file", type=str, default=None)
+    parser.add_argument("--video", type=str, default=None)
+    parser.add_argument("--image", type=str, default=None)
     parser.add_argument("--width", help='cap width', type=int, default=960)
     parser.add_argument("--height", help='cap height', type=int, default=540)
 
@@ -24,7 +25,7 @@ def get_args():
         "--model",
         type=str,
         default=
-        '02.model/DeepLabV3Plus(timm-mobilenetv3_small_100)_452_2.16M_0.8385/best_model_simplifier.onnx'
+        '02.model/DeepLabV3Plus(timm-mobilenetv3_small_100)_1366_2.16M_0.8297/best_model_simplifier.onnx'
     )
     parser.add_argument("--score", type=float, default=0.5)
 
@@ -62,11 +63,12 @@ def main():
     # 引数解析 #################################################################
     args = get_args()
     cap_device = args.device
+    image_path = args.image
     cap_width = args.width
     cap_height = args.height
 
-    if args.file is not None:
-        cap_device = args.file
+    if args.video is not None:
+        cap_device = args.video
 
     mirror = args.mirror
 
@@ -74,15 +76,21 @@ def main():
     score_th = args.score
 
     # カメラ準備 ###############################################################
-    cap = cv.VideoCapture(cap_device)
-    cap.set(cv.CAP_PROP_FRAME_WIDTH, cap_width)
-    cap.set(cv.CAP_PROP_FRAME_HEIGHT, cap_height)
+    if image_path is None:
+        cap = cv.VideoCapture(cap_device)
+        cap.set(cv.CAP_PROP_FRAME_WIDTH, cap_width)
+        cap.set(cv.CAP_PROP_FRAME_HEIGHT, cap_height)
 
-    _, frame = cap.read()
+        _, frame = cap.read()
+    else:
+        frame = cv.imread(image_path)
 
     # モデルロード #############################################################
     input_size = 512
-    onnx_session = onnxruntime.InferenceSession(model)
+    onnx_session = onnxruntime.InferenceSession(
+        model,
+        providers=['CUDAExecutionProvider', 'CPUExecutionProvider'],
+    )
 
     # 背景画像リスト ###########################################################
     bg_image_list = []
@@ -102,16 +110,52 @@ def main():
     bg_image[:] = (255, 0, 0)
     bg_image_list.append(bg_image)
 
-    while True:
-        start_time = time.time()
+    if image_path is None:
+        while True:
+            start_time = time.time()
 
-        # カメラキャプチャ #####################################################
-        ret, frame = cap.read()
-        if not ret:
-            break
-        if mirror:
-            frame = cv.flip(frame, 1)  # ミラー表示
+            # カメラキャプチャ #####################################################
+            ret, frame = cap.read()
+            if not ret:
+                break
+            if mirror:
+                frame = cv.flip(frame, 1)  # ミラー表示
+            debug_image = copy.deepcopy(frame)
+
+            # 検出実施 ##############################################################
+            masks = run_inference(
+                onnx_session,
+                input_size,
+                frame,
+            )
+
+            # 閾値判定
+            masks = np.where(masks > score_th, 0, 1)
+
+            elapsed_time = time.time() - start_time
+
+            # デバッグ描画
+            debug_image = draw_debug(
+                debug_image,
+                elapsed_time,
+                masks,
+                bg_image_list,
+                border_color=None,
+            )
+
+            # キー処理(ESC：終了) ##################################################
+            key = cv.waitKey(1)
+            if key == 27:  # ESC
+                break
+
+            # 画面反映 #############################################################
+            cv.imshow('Demo', debug_image)
+
+        cap.release()
+    else:
         debug_image = copy.deepcopy(frame)
+
+        start_time = time.time()
 
         # 検出実施 ##############################################################
         masks = run_inference(
@@ -134,15 +178,10 @@ def main():
             border_color=None,
         )
 
-        # キー処理(ESC：終了) ##################################################
-        key = cv.waitKey(1)
-        if key == 27:  # ESC
-            break
-
         # 画面反映 #############################################################
         cv.imshow('Demo', debug_image)
+        key = cv.waitKey(-1)
 
-    cap.release()
     cv.destroyAllWindows()
 
 
@@ -182,7 +221,14 @@ def draw_debug(
                                        frame_border_image)
 
             # 各クラスマスク描画
-            debug_image = np.where(resize_mask, debug_image, bg_image)
+            mask_image = np.where(resize_mask, debug_image, bg_image)
+            debug_image = cv.addWeighted(
+                debug_image,
+                0.6,
+                mask_image,
+                0.4,
+                1.0,
+            )
     else:
         if bg_image_list[0] is not None:
             # 背景画像
@@ -204,7 +250,14 @@ def draw_debug(
                                    frame_border_image)
 
             # 各クラスマスク描画
-            debug_image = np.where(resize_mask, debug_image, bg_image)
+            mask_image = np.where(resize_mask, debug_image, bg_image)
+            debug_image = cv.addWeighted(
+                debug_image,
+                0.6,
+                mask_image,
+                0.4,
+                1.0,
+            )
 
     # 処理時間
     cv.putText(debug_image,

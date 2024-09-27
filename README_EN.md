@@ -53,8 +53,11 @@ python demo_onnx_image_overlay.py
 * --device<br>
 Camera device number<br>
 Default：0
-* --file<br>
+* --video<br>
 Video file ※If you specify a video, it will be executed in preference to the camera.<br>
+Default：None
+* --image<br>
+image file ※If you specify a image, it will be executed in preference to the camera.<br>
 Default：None
 * --width<br>
 Width at the time of camera capture<br>
