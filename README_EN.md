@@ -17,8 +17,7 @@ I am using [Segmentation Models Pytorch](https://github.com/qubvel/segmentation_
 
 In this repository, the following three types of model pth files and onnx files are prepared.
 * DeepLabV3+<br>Encoder：timm-mobilenetv3_small_100<br>Parameters：2.16 million
-* PAN(Pyramid Attention Network)<br>Encoder：timm-mobilenetv3_small_100<br>Parameters：1.02 million
-* U-Net++<br>Encoder：timm-mobilenetv3_small_100<br>Parameters：3.71 million
+* DeepLabV3+<br>Encoder：timm-mobilenetv3_large_100<br>Parameters：4.71 million
 
 # Requirement 
 * torch 1.9.0 or later
