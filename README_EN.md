@@ -1,14 +1,19 @@
 [[Japanese](https://github.com/Kazuhito00/Skin-Clothes-Hair-Segmentation-using-SMP)/English]
 
-# ⚠Attention⚠
-The dataset used to train the model was collected by ourselves.<br>
-The recognition rate may drop significantly depending on the background, clothing color, and skin color.<br>
-The author(Takahashi) is not responsible for any damage or problems that may occur when using the model.
+> [!WARNING]
+> The dataset used to train the model was collected by ourselves.<br>
+> The recognition rate may drop significantly depending on the background, clothing color, and skin color.<br>
+> The author(Takahashi) is not responsible for any damage or problems that may occur when using the model.
+
+> [!NOTE]
+> Although we have made it compatible with illustrations, <br>
+> the accuracy is not very good due to the insufficient number of datasets.
 
 # Skin-Clothes-Hair-Segmentation-using-SMP
 It is a model that performs semantic segmentation of 3 classes (skin, clothes, hair).<br>
 I am using [Segmentation Models Pytorch](https://github.com/qubvel/segmentation_models.pytorch).<br>
 <img src="https://user-images.githubusercontent.com/37477845/132933990-717324f1-2d74-4060-8b67-0bef06058ebe.gif" width="45%">　<img src="https://user-images.githubusercontent.com/37477845/132933998-eae87d48-a98f-43e1-a31c-983e1dea9c1d.gif" width="45%"><br>
+<img src="https://github.com/user-attachments/assets/8f1483d6-c689-4353-a8e8-10a72e6317dd" width="45%">　
 
 In this repository, the following three types of model pth files and onnx files are prepared.
 * DeepLabV3+<br>Encoder：timm-mobilenetv3_small_100<br>Parameters：2.16 million
