@@ -1,19 +1,22 @@
 [Japanese/[English](https://github.com/Kazuhito00/Skin-Clothes-Hair-Segmentation-using-SMP/blob/main/README_EN.md)]
 
-# ⚠Attention⚠
-モデルを訓練するために使用したデータセットは自前で収集したものです。<br>
-背景や服の色、肌の色によって認識率が大きく下がる可能性があります。<br>
-モデルの使用に際し、損害や問題が発生しても、作成者(高橋)は一切責任を負いません。
+> [!WARNING]
+> モデルを訓練するために使用したデータセットは自前で収集したものです。<br>
+> 背景や服の色、肌の色によって認識率が大きく下がる可能性があります。<br>
+> モデルの使用に際し、損害や問題が発生しても、作成者(高橋)は一切責任を負いません。
+
+> [!NOTE]
+> イラストにも対応するようにしましたが、データセット数が不足しているため、精度はイマイチです。
 
 # Skin-Clothes-Hair-Segmentation-using-SMP
 3クラス(肌、服、髪)のセマンティックセグメンテーションを実施するモデルです。<br>
 [Segmentation Models Pytorch](https://github.com/qubvel/segmentation_models.pytorch)を使用しています。<br>
 <img src="https://user-images.githubusercontent.com/37477845/132933990-717324f1-2d74-4060-8b67-0bef06058ebe.gif" width="45%">　<img src="https://user-images.githubusercontent.com/37477845/132933998-eae87d48-a98f-43e1-a31c-983e1dea9c1d.gif" width="45%"><br>
+<img src="https://github.com/user-attachments/assets/8f1483d6-c689-4353-a8e8-10a72e6317dd" width="45%">　
 
 本リポジトリでは、以下3種類のモデルのpthファイルとonnxファイルを用意しています。
 * DeepLabV3+<br>エンコーダー：timm-mobilenetv3_small_100<br>パラメータ数：約216万
-* PAN(Pyramid Attention Network)<br>エンコーダー：timm-mobilenetv3_small_100<br>パラメータ数：約102万
-* U-Net++<br>エンコーダー：timm-mobilenetv3_small_100<br>パラメータ数：約371万
+* DeepLabV3+<br>エンコーダー：timm-mobilenetv3_large_100<br>パラメータ数：約471万
 
 # Requirement 
 * torch 1.9.0 or later
